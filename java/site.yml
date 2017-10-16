@@ -1,5 +1,5 @@
 ---
-- hosts: kiosk
+- hosts: "{{ hosts }}"
   become: yes
   roles:
     - java
