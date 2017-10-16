@@ -1,0 +1,5 @@
+---
+- hosts: kiosk
+  become: yes
+  roles:
+    - java
