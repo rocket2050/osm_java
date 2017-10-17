@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ hosts }}"
+- hosts: all
   become: yes
   roles:
     - /var/lib/awx/projects/_12__osm_java/java
