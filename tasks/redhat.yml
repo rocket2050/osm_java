@@ -15,3 +15,4 @@
     
 - name: To source environment file
   shell: "source /etc/environment"
+  
