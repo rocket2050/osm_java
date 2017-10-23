@@ -11,7 +11,8 @@ There is no any special requirments for RedHat Family.
 Role Variables
 --------------
 The role variables for multiple version java is [vars](https://github.com/opstree-ansible/osm_java/blob/master/vars/main.yml)
-.
+
+
 Example Playbook
 ----------------
 
