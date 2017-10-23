@@ -39,8 +39,8 @@
     dest: /root/java.sh
     mode: 655
  
- - name: run script on the machine
-   commnad: /bin/bash /root/java.sh
+- name: run script on the machine
+  command: /bin/bash /root/java.sh
 #- name: To give java source
 #  shell: "source /etc/environment"
   
