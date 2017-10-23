@@ -36,7 +36,8 @@
 - name: Copy the Environment file
   template:
     src: java.j2
-    dest: /root/
+    dest: /root/java.sh
+    mode: 655
  
  - name: run script on the machine
    commnad: /bin/bash /root/java.sh
