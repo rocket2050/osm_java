@@ -13,6 +13,11 @@
     src: environment.Rhel.j2
     dest: /etc/environment
     
-- name: To source environment file
-  shell: "source /etc/environment"
-  
+- name: Copy the Environment file
+  template:
+    src: java.j2
+    dest: /root/java.sh
+    mode: 655
+ 
+- name: run script on the machine
+  command: /bin/bash /root/java.sh
