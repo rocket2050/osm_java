@@ -1,0 +1,11 @@
+---
+# tasks file for java
+- name: To install Java on RedHat
+  include: redhat.yml
+  when:
+    ansible_os_family == 'RedHat'
+    
+- name: To install Java on Debian 
+  include: debian.yml
+  when:
+    ansible_os_family == 'Debian'
