@@ -2,4 +2,4 @@
 - hosts: webservers
   become: yes
   roles:
-    - java
+    - /var/lib/awx/projects/_12__osm_java
