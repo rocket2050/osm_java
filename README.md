@@ -1,24 +1,22 @@
-osm_java
+Role Name
 =========
 
-It is an ansible role of java for RedHat and Debian Family.
+A brief description of the role goes here.
 
 Requirements
 ------------
-The requirment for java is:-
-python-software-properties and ppa:webupd8team/java on 'Debian Family'
 
-For RedHat there is no any pre-requirment
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
 
-Variables are stored in Vars
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
 Dependencies
 ------------
 
-The dependency of java for RedHat is openjdk1.8.0-devel
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------

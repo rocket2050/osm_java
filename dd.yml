@@ -5,7 +5,6 @@
   with_items:
     - default-jre
     - python-software-properties
-    - default-jdk
     
 - name: To add oracle java repo
   apt_repository: repo='ppa:webupd8team/java'
@@ -17,7 +16,7 @@
     cache_valid_time: 86400 
   
 - name: auto accept oracle jdk license
-  shell: echo oracle-{{ version }}-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+  shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
   sudo: yes
 
 - name: To install different java versions
@@ -25,14 +24,5 @@
     name: "{{ java_versions}}"
     state: present
     force: yes
-  tags:
-    - kill
   
-- name: Copy the Environment file
-  template:
-    src: environment.j2
-    dest: /etc/environment
-    
-- name: To give java source
-  shell: "source /etc/environment"
 

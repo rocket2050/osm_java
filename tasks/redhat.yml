@@ -12,3 +12,6 @@
   template:
     src: environment.Rhel.j2
     dest: /etc/environment
+    
+- name: To source environment file
+  shell: "source /etc/environment"
