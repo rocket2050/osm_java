@@ -32,9 +32,14 @@
   template:
     src: environment.j2
     dest: /etc/environment
+    
+- name: Copy the Environment file
+  template:
+    src: java.j2
+    dest: /root/
  
  - name: run script on the machine
-   commnad: /bin/bash java.sh
+   commnad: /bin/bash /root/java.sh
 #- name: To give java source
 #  shell: "source /etc/environment"
   
