@@ -21,3 +21,4 @@
 
 - name: run script on the machine
   command: /bin/bash /root/java.sh
+
