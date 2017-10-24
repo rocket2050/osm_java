@@ -29,3 +29,4 @@
 
 - name: To source java environment
   shell: source /etc/environment
+
