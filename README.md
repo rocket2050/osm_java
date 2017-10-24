@@ -22,6 +22,10 @@ Including an example of how to use your role (for instance, with variables passe
       roles:
          - { role: osm_java }
 
+Note
+---------
+If you want to install openjdk please refer [release-1.0](https://github.com/opstree-ansible/osm_java/tree/release-1.0)
+
 License
 -------
 
