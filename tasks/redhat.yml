@@ -5,19 +5,19 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - java-1.8.0-openjdk-headless
-    - java-1.8.0-openjdk-devel
-    
+    - "{{ java_version_redhat }}-openjdk-headless"
+    - "{{ java_version_redhat }}-openjdk-devel"
+
 - name: To create JAVA Environment
   template:
     src: environment.Rhel.j2
     dest: /etc/environment
-    
+
 - name: Copy the Environment file
   template:
     src: java.j2
     dest: /root/java.sh
     mode: 655
- 
+
 - name: run script on the machine
   command: /bin/bash /root/java.sh

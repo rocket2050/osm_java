@@ -1,12 +1,5 @@
 ---
 # vars file for java
-#For ubuntu give version in extra vars
-java_versions:
-  - oracle-{{ version }}-installer
-  - oracle-{{ version }}-installer
-  - oracle-{{ version }}-installer
-  
-#java_download : http://javadl.oracle.com/webapps/download/AutoDL?BundleId=225342_090f390dda5b47b9b721c7dfaa008135
+java_version_redhat: java-1.8.0
 
-#java_rpm: jdk.rpm
-
+java_version_debian: openjdk-8
