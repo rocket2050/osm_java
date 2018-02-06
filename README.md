@@ -3,6 +3,17 @@ osm_java
 
 An ansible role for java setup on RedHat and Debian Family.
 
+extra-vars
+==========
+
+In this repo over master-branch need to define java version by passing variable during execution of playbook  for accept oracle-jdk license.
+
+Example: 
+
+ansible-playbook --extra-vars version=java7/java8 site.yml
+
+NOTE: playbooks are made for debian and redhat so while passing argument change the name.
+
 Requirements
 ------------
 The requirment is python-software-properties on Debian Family
