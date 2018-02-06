@@ -7,6 +7,17 @@ Requirements
 ------------
 The only requirment is python-common-software-properties in Debian based Operating System.
 
+extra-vars
+==========
+
+In this branch release-1.0 contains multi domain support where by providing java version in variable you can customise the version want to install. By default this will install java8.
+
+Example:
+ansible-playbook --extra-vars java_version_debian=openjdk-7/8 site.yml
+
+NOTE: playbooks are made for debian and redhat both so while passing argument change the name.
+
+
 Role Variables
 --------------
 The role variables are in [vars](https://github.com/opstree-ansible/osm_java/blob/release-1.0/vars/main.yml)
