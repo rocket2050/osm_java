@@ -10,10 +10,10 @@ The only requirment is python-common-software-properties in Debian based Operati
 extra-vars
 ==========
 
-In this branch release-1.0 contains multi domain support where by providing java version in variable you can customise the version want to install. By default this will install java8.
+In this branch release-1.0 contains multi domain support where by providing java version in variable you can customise the version want to install. By default this will install java8 with java_home. 
 
-Example:
-ansible-playbook --extra-vars java_version_debian=openjdk-7/8 site.yml
+Example for redhat:
+ansible-playbook --extra-vars java_version_debian=java-1.7.0 site.yml
 
 NOTE: playbooks are made for debian and redhat both so while passing argument change the name.
 

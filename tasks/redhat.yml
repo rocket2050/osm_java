@@ -9,9 +9,9 @@
     - "{{ java_version_redhat }}-openjdk-devel"
 
 - name: To create JAVA Environment
-  template:
-    src: environment.Rhel.j2
-    dest: /etc/environment
+  shell: a=$(update-alternatives  --list | grep {{ java_version_redhat }} | awk '{ print $3 }' | head -1) && echo "JAVA_HOME=$a" > /etc/environment
+  tags:
+   - test
 
 - name: Copy the Environment file
   template:
@@ -21,4 +21,3 @@
 
 - name: run script on the machine
   command: /bin/bash /root/java.sh
-
