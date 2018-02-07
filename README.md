@@ -16,19 +16,19 @@ Example for custome vars:
 
 redhat
 -------  
---extra-vars java_version_redhat=java-1.7.0 or 1.8.0  
+```
+--extra-vars java_version_redhat=java-1.7.0 or 1.8.0
+
+eg: ansible-playbook --extra-vars java_version_debian=7 site.yml
+```
 
 debian  
 ------- 
- 
+``` 
 --extra-vars java_version_debian=7 or 8
 
 eg: ansible-playbook --extra-vars java_version_debian=7 site.yml
-
-NOTE:  
-
-playbooks are made for debian and redhat both so while passing argument change the name.
-
+```
 
 Role Variables
 --------------
@@ -51,7 +51,8 @@ Including an example of how to use your role (for instance, with variables passe
 Note
 --------
 
-This will install openjdk java not oracle.
+* This will install openjdk java not oracle.
+* Playbooks are made for debian and redhat both so while passing argument change the name.
 
 License
 -------
