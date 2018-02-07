@@ -12,9 +12,9 @@ extra-vars
 
 In this branch release-1.0 contains multi domain support where by providing java version in variable you can customise the version want to install. By default this will install java8 with java_home. 
 
-Example for custome vars:
-redhat:   
---extra-vars java_version_redhat=java-1.7.0 or 1.8.0
+Example for custome vars:  
+redhat:  
+--extra-vars java_version_redhat=java-1.7.0 or 1.8.0  
 debian:  
 --extra-vars java_version_debian=7 or 8
 
