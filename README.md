@@ -10,7 +10,7 @@ The only requirment is python-common-software-properties in Debian based Operati
 extra-vars
 ==========
 
-In this branch release-1.1 contains multi domain support where by providing java version in variable you can customise the version want to install.
+The role contains multi domain support where by providing java version in variable you can customise the version want to install.
 
 Example for custome vars:  
 
@@ -60,5 +60,7 @@ BSD
 
 Author Information
 ------------------
+###### www.opstree.com
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+###### blog.opstree.com
+

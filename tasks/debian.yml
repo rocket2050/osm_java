@@ -2,25 +2,21 @@
 # Setup Java on System
 
 - name: Install add-apt-repostory
-  become: yes
   apt: name=software-properties-common state=latest
 
 # Adding Open Java repository
 - name: Add Java Repository
-  become: yes
   apt_repository: repo='ppa:openjdk-r/ppa'
 
 # Updating cache
 - name: Update apt cache if repository just added.
   apt: update_cache=yes
 
-# Installing Java8
+# Installing Java
 - name: Install Java 
-  become: yes
   apt: name={{item}} state=installed
   with_items:
     - "openjdk-{{ java_version_debian }}-jdk"
-#    - "{{ java_version_debian }}-jre"
 
 - name: To create JAVA Environment
   shell: a=$(update-alternatives  --list java | grep {{ java_version_debian }}) && echo "JAVA_HOME=$a" >> /etc/environment
