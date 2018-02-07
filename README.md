@@ -1,7 +1,7 @@
 Osm_Java
 =========
 
-Ansible role of Java for RedHat and Debian Family.
+Ansible role of openjdk Java for RedHat and Debian Family. By default this will install java8 with java_home.
 
 Requirements
 ------------
@@ -10,17 +10,21 @@ The only requirment is python-common-software-properties in Debian based Operati
 extra-vars
 ==========
 
-In this branch release-1.1 contains multi domain support where by providing java version in variable you can customise the version want to install. By default this will install java8 with java_home. 
+In this branch release-1.1 contains multi domain support where by providing java version in variable you can customise the version want to install.
 
 Example for custome vars:  
-redhat:  
+redhat
+-------  
 --extra-vars java_version_redhat=java-1.7.0 or 1.8.0  
-debian:  
+debian
+-------  
 --extra-vars java_version_debian=7 or 8
 
 eg: ansible-playbook --extra-vars java_version_debian=7 site.yml
-
-NOTE: playbooks are made for debian and redhat both so while passing argument change the name.
+--
+NOTE
+-----
+playbooks are made for debian and redhat both so while passing argument change the name.
 
 
 Role Variables
