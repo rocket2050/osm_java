@@ -25,8 +25,8 @@ debian
 
 eg: ansible-playbook --extra-vars java_version_debian=7 site.yml
 
-NOTE
------
+NOTE:  
+
 playbooks are made for debian and redhat both so while passing argument change the name.
 
 
