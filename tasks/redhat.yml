@@ -1,15 +1,17 @@
 ---
+- name: Dependent file for Centos6
+  yum: name=libselinux-python state=installed
+  when: ansible_os_family == 'RedHat' and ansible_distribution_major_version == '6'
 
 - name: To download and install java
   yum:
     name: "{{ item }}"
     state: present
   with_items:
-    - "{{ java_version_redhat }}-openjdk-headless"
     - "{{ java_version_redhat }}-openjdk-devel"
 
 - name: To create JAVA Environment
-  shell: a=$(update-alternatives  --list | grep {{ java_version_redhat }} | awk '{ print $3 }' | head -1) && echo "JAVA_HOME=$a" > /etc/environment
+  shell: a=$(update-alternatives  --display java | head -n2 | tail -n1 | awk '{ print $5 }') && echo "JAVA_HOME=$a" > /etc/environment
   tags:
    - test
 
@@ -21,3 +23,4 @@
 
 - name: run script on the machine
   command: /bin/bash /root/java.sh
+
