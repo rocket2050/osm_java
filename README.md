@@ -1,7 +1,7 @@
 Osm_Java
 =========
 
-Ansible role of openjdk Java for RedHat and Debian Family. By default this will install java8 with java_home.
+Ansible role of openjdk Java for RedHat and Debian Family. By default this will install and configure java8 with java_home.
 
 Requirements
 ------------
