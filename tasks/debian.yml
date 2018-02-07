@@ -6,7 +6,7 @@
   apt: name=software-properties-common state=latest
 
 # Adding Open Java repository
-- name: Add Open Java8 Repository
+- name: Add Java Repository
   become: yes
   apt_repository: repo='ppa:openjdk-r/ppa'
 
@@ -15,18 +15,17 @@
   apt: update_cache=yes
 
 # Installing Java8
-- name: Install Oracle Java 8
+- name: Install Java 
   become: yes
   apt: name={{item}} state=installed
   with_items:
-    - "{{ java_version_debian }}-jdk"
-    - "{{ java_version_debian }}-jre"
+    - "openjdk-{{ java_version_debian }}-jdk"
+#    - "{{ java_version_debian }}-jre"
 
-- name: To set environment variable
-  template:
-    src: environment.j2
-    dest: /etc/environment
+- name: To create JAVA Environment
+  shell: a=$(update-alternatives  --list java | grep {{ java_version_debian }}) && echo "JAVA_HOME=$a" >> /etc/environment
+  tags:
+   - test
 
 - name: To source java environment
-  shell: source /etc/environment
-
+  shell: source /etc/environment executable=/bin/bash

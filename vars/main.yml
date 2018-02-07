@@ -4,4 +4,4 @@
 java_version_redhat: java-1.8.0
 
 #java version for Debian
-java_version_debian: openjdk-8
+java_version_debian: 8
