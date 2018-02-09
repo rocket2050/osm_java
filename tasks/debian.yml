@@ -19,7 +19,7 @@
     - "openjdk-{{ java_version_debian }}-jdk"
 
 - name: To create JAVA Environment
-  shell: a=$(update-alternatives  --list java | grep {{ java_version_debian }}) && echo "JAVA_HOME=$a" >> /etc/environment
+  shell: a=$(update-alternatives  --display java | head -n2 | tail -n1 | awk '{ print $5 }' |cut -d '/' -f1-5) && echo "JAVA_HOME=$a" >> /etc/environment
   tags:
    - test
 
