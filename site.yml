@@ -1,6 +1,4 @@
 ---
-- hosts: java
-  become: true
+- hosts: {{ HOST }}
   roles:
-    - "/etc/ansible/roles/osm_java" 
-  remote_user: root
+    - osm_java
