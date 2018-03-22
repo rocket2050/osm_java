@@ -1,4 +1,4 @@
 ---
-- hosts: {{ HOST }}
+- hosts: "{{ host }}"
   roles:
     - osm_java
