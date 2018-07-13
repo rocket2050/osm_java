@@ -23,5 +23,5 @@
   tags:
    - test
 
-- name: To source java environment
-  shell: source /etc/environment executable=/bin/bash
+#- name: To source java environment
+#  shell: source /etc/environment executable=/bin/bash
