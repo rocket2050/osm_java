@@ -1,58 +1,31 @@
-Osm_Java
+Role Name
 =========
 
-Ansible role of openjdk Java for RedHat and Debian Family. By default this will install and configure java8 with java_home.
+A brief description of the role goes here.
 
 Requirements
 ------------
-The only requirment is python-common-software-properties in Debian based Operating System.
 
-extra-vars
-==========
-
-The role contains multi domain support where by providing java version in variable you can customise the version want to install.
-
-Example for custome vars:  
-
-redhat
--------  
-```
---extra-vars java_version_redhat=java-1.7.0 or 1.8.0
-
-eg: ansible-playbook --extra-vars java_version_debian=7 site.yml
-```
-
-debian  
-------- 
-``` 
---extra-vars java_version_debian=7 or 8
-
-eg: ansible-playbook --extra-vars java_version_debian=7 site.yml
-```
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
-The role variables are in [vars](https://github.com/opstree-ansible/osm_java/blob/release-1.1/vars/main.yml)
+
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
 Dependencies
 ------------
 
-There is no any special dependency
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: "{{ hosts }}"
+    - hosts: servers
       roles:
-         - { role: osm_java }
-
-Note
---------
-
-* This will install openjdk java not oracle.
-* Playbooks are made for debian and redhat both so while passing argument change the name.
+         - { role: username.rolename, x: 42 }
 
 License
 -------
@@ -61,7 +34,5 @@ BSD
 
 Author Information
 ------------------
-###### www.opstree.com
 
-###### blog.opstree.com
-
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).

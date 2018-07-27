@@ -1,0 +1,41 @@
+---
+- name: dependecyfor centos 6 
+  block:
+  - yum: name=libselinux-python state=present
+
+  - name: donwload jdk 
+    get_url: 
+        url: "{{ java_version_for_rhel6 }}"
+        dest: /tmp/
+        headers:  "Cookie: oraclelicense=accept-securebackup-cookie"
+  - command: "{{ java_version_for_rhel6 }} | awk -F '/' '{print $NF}'"
+    register: RPM_VER
+  - name: install java on redhat 6
+    yum:  
+        name: "/tmp/{{ RPM_VER }}" 
+        state: present
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == '6' 
+  
+- name: Download java for centos 7 and install 
+  block:
+  - get_url:
+        url: "{{ java_version_for_rhel7 }}"
+        dest: /tmp/
+        headers:  "Cookie: oraclelicense=accept-securebackup-cookie"
+  - command: "{{ java_version_for_rhel7 }} | awk -F '/' '{print $NF}'"
+    register: RPM_VER
+  - name: install java on redhat 7
+    yum:   
+        name: "/tmp/{{ RPM_VER }}"
+        state: present
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == '7'
+
+- name: set java envirnment 
+  shell: a=$(update-alternatives --display java  | head -n2 | tail -1  | awk '{print $5}' | cut -d '/' -f1-5) && echo "JAVA_HOME"=$a >>/etc/profile
+  tags:
+     - java_env
+
+- name: get the file read 
+  shell: . /etc/profile
+ 
+

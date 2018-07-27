@@ -1,0 +1,23 @@
+---
+- name: add java repository on debian 
+  apt_repository: repo='ppa:webupd8team/java'
+
+- name: update apt cache if repo just added
+  apt: update_cache=yes
+
+- name: install java 
+  apt: 
+        name: "{{ item }}"
+        state: present
+  with_items:
+        - "oracle-{{ java_version_for_debian }}-installer"
+
+- name: set java envirnment
+  apt: 
+        name: "{{ item }}"
+        state: present
+  with_items:
+        - "oracle-{{ java_version_for_debian }}-set-default"
+
+
+  

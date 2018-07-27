@@ -1,7 +1,12 @@
 ---
 # vars file for java
-#java version for RedHat
-java_version_redhat: java-1.8.0
 
-#java version for Debian
-java_version_debian: 8
+java_version_for_rhel6: 'http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.rpm'
+
+java_version_for_rhel7: 'http://download.oracle.com/otn-pub/java/jdk/10.0.2+13/19aef61b38124481863b1413dce1855f/jdk-10.0.2_linux-x64_bin.rpm'
+
+tomcat_version: 'http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32.tar.gz'
+
+tomcat_folder: /opt
+
+java_version_for_debian: 'java8'
