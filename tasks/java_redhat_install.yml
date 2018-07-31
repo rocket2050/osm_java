@@ -8,12 +8,12 @@
         url: "{{ java_version_for_rhel6 }}"
         dest: /tmp/
         headers:  "Cookie: oraclelicense=accept-securebackup-cookie"
-  - command: "{{ java_version_for_rhel6 }} | awk -F '/' '{print $NF}'"
+  - command: echo "{{ java_version_for_rhel6 }} | awk -F '/' '{print $NF}'"
     register: RPM_VER
   - name: install java on redhat 6
-    yum:  
-        name: "/tmp/{{ RPM_VER }}" 
-        state: present
+    shell: "rpm -ivh /tmp/{{RPM_VER.stdout}}"    
+       # name: "/tmp/{{ RPM_VER.stdout }}" 
+       # state: present
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == '6' 
   
 - name: Download java for centos 7 and install 
@@ -22,11 +22,11 @@
         url: "{{ java_version_for_rhel7 }}"
         dest: /tmp/
         headers:  "Cookie: oraclelicense=accept-securebackup-cookie"
-  - command: "{{ java_version_for_rhel7 }} | awk -F '/' '{print $NF}'"
+  - command: echo "{{ java_version_for_rhel7 }} | awk -F '/' '{print $NF}'"
     register: RPM_VER
   - name: install java on redhat 7
     yum:   
-        name: "/tmp/{{ RPM_VER }}"
+        name: "/tmp/{{RPM_VER}}.stdout"
         state: present
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version == '7'
 
